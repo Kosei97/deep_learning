@@ -1,0 +1,3 @@
+venv/**
+transfer_learning/dataset/**
+.mypy_cache/*
