@@ -5,4 +5,8 @@
     "--line-length",
     "79",
   ],
+  "terminal.integrated.env.windows": {
+    "PATH": "${workspaceFolder}\\venv\\Scripts;${env:PATH}",
+  },
+  "jupyter.notebookFileRoot": "${workspaceFolder}"
 }

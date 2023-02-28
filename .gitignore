@@ -1,3 +1,4 @@
 venv/**
 transfer_learning/dataset/**
+transfer_learning/**/__pycache__/**
 .mypy_cache/*

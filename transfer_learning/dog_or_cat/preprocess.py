@@ -1,28 +1,28 @@
 import urllib.request
 import shutil
 import os
+from transfer_learning.dog_or_cat.constant import URL, DATA_DIR
 
-URL = (
-    "https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip"
-)
-SAVE_NAME = "transfer_learning/dataset/dog_or_cat/data.zip"
-if not os.path.exists("transfer_learning/dataset/dog_or_cat"):
-    os.mkdir("transfer_learning/dataset/dog_or_cat")
-urllib.request.urlretrieve(URL, SAVE_NAME)
 
-shutil.unpack_archive(
-    "transfer_learning/dataset/dog_or_cat/data.zip",
-    "transfer_learning/dataset/dog_or_cat",
-)
+def download_data():
+    SAVE_NAME = f"{DATA_DIR}/data.zip"
+    if not os.path.exists(DATA_DIR):
+        os.mkdir(DATA_DIR)
+    urllib.request.urlretrieve(URL, SAVE_NAME)
 
-shutil.move(
-    "transfer_learning/dataset/dog_or_cat/cats_and_dogs_filtered/train",
-    "transfer_learning/dataset/dog_or_cat/train",
-)
-shutil.move(
-    "transfer_learning/dataset/dog_or_cat/cats_and_dogs_filtered/validation",
-    "transfer_learning/dataset/dog_or_cat/validation",
-)
+    shutil.unpack_archive(
+        f"{DATA_DIR}/data.zip",
+        DATA_DIR,
+    )
 
-shutil.rmtree("transfer_learning/dataset/dog_or_cat/cats_and_dogs_filtered")
-os.remove("transfer_learning/dataset/dog_or_cat/data.zip")
+    shutil.move(
+        f"{DATA_DIR}/cats_and_dogs_filtered/train",
+        f"{DATA_DIR}/train",
+    )
+    shutil.move(
+        f"{DATA_DIR}/cats_and_dogs_filtered/validation",
+        f"{DATA_DIR}/validation",
+    )
+
+    shutil.rmtree(f"{DATA_DIR}/cats_and_dogs_filtered")
+    os.remove(f"{DATA_DIR}/data.zip")
