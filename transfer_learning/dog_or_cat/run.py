@@ -11,3 +11,7 @@ def run():
     train_dataset, validation_dataset = create_dataset()
     model = create_model()
     learning_start(model, train_dataset, validation_dataset)
+
+
+if __name__ == "__main__":
+    run()
