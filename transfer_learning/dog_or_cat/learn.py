@@ -69,9 +69,9 @@ def learning_start(model, train_dataset, validation_dataset):
     )
 
     # 学習開始
-    history = model.fit(
+    model.fit(
         train_dataset,
         epochs=EPOCHS,
         validation_data=validation_dataset,
     )
-    return history
+    model.save("result/model.h5")
