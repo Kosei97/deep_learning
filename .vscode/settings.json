@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "79",
+  ],
+  "terminal.integrated.env.windows": {
+    "PATH": "${workspaceFolder}\\venv\\Scripts;${env:PATH}",
+  },
+  "jupyter.notebookFileRoot": "${workspaceFolder}"
+}
