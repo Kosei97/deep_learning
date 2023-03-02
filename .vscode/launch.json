@@ -15,7 +15,6 @@
             "env": {
                 "PYTHONPATH": "${workspaceFolder}"
             },
-            "python": "${workspaceFolder}/venv/bin/python"
         }
     ]
 }
