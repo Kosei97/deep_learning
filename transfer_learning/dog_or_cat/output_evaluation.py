@@ -12,7 +12,7 @@ def image_input():
     root.geometry("0x0")
     root.overrideredirect(1)
 
-    image_path = tk.filedialog.askopenfilename()
+    image_path = filedialog.askopenfilename()
     root.destroy()
 
     return image_path

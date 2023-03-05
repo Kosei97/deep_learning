@@ -74,4 +74,4 @@ def learning_start(model, train_dataset, validation_dataset):
         epochs=EPOCHS,
         validation_data=validation_dataset,
     )
-    model.save("result/model.h5")
+    model.save("transfer_learning/dog_or_cat/result/model.h5")
